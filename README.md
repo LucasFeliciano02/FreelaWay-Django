@@ -89,9 +89,15 @@ As seguintes ferramentas 🛠 foram utilizadas na construção do projeto:
       <td>Python</td>
     </tr>
     <tr>
-      <td>Tkinter</td>
+      <td>Django 4</td>
     </tr> 
-	    
+    <tr>
+      <td>SQLite</td>
+    </tr>
+    <tr>
+      <td>Arquitetura MVT</td>
+    </tr>  
+	  
   </tbody>
 
 </table>
