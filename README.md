@@ -1,40 +1,39 @@
+<!-- Status -->
 
-<h4 align="center"> 
-
-	🚧  Projeto FreelaWay 🚀 Em construção...  🚧
+<!-- <h4 align="center"> 
+---
+	🚧  Projeto Freelaway 🚀 Em construção...  🚧
 </h4> 
 
-<hr>
+<hr> -->
 
 
 <div align="center" id="top">
   <img alt="cadastro" title="cadastro" src="./1_cadastro.PNG"/>
-</h1>
 
 
 <div align="center" id="top">
   <img alt="login" title="login" src="./2_login.PNG"/>
-</h1>
- 
+
 
 <div align="center" id="top">
   <img alt="recuperar senha" title="recuperar senha" src="./3_recuperar_senha.gif"/>
-</h1>
+
 
 
 <div align="center" id="top">
   <img alt="jobs" title="jobs" src="./4_jobs.PNG"/>
-</h1>
+
 
 
 <div align="center" id="top">
   <img alt="aceitar jobs" title="aceitar jobs" src="./5_aceitar_jobs.PNG"/>
-</h1>
+
 
 
 <div align="center" id="top">
   <img alt="historico" title="historico" src="./6_historico.PNG"/>
-</h1>
+
 
 
 <div align="center" id="top">
