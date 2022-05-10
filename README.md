@@ -42,7 +42,7 @@
  </div>
  
  
- <h1 align="center">Freelaway Project</h1>
+ <h1 align="center">FreelaWay - PyStack Week 3.0</h1>
 
 
 <p align="center">
