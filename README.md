@@ -144,6 +144,8 @@ Além disto é bom ter um editor para trabalhar com o código, tal como: [VS Cod
  ->  (env) python manage.py makemigrations
      (env) python manage.py migrate
 
+# Executar projeto
+->  (env) python manage.py runserver
 ```
 
 
