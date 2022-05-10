@@ -10,46 +10,41 @@
 
 <div align="center" id="top">
   <img alt="cadastro" title="cadastro" src="./1_cadastro.PNG"/>
+</h1>
 
 
-<div align="center" id="top">
-  <img alt="login" title="login" src="./2_login.PNG"/>
+<img alt="login" title="login" src="./2_login.PNG"/>
+</h1>
 
-
-<div align="center" id="top">
   <img alt="recuperar senha" title="recuperar senha" src="./3_recuperar_senha.gif"/>
+</h1>
 
 
-
-<div align="center" id="top">
   <img alt="jobs" title="jobs" src="./4_jobs.PNG"/>
+</h1>
 
 
-
-<div align="center" id="top">
   <img alt="aceitar jobs" title="aceitar jobs" src="./5_aceitar_jobs.PNG"/>
+</h1>
 
 
-
-<div align="center" id="top">
   <img alt="historico" title="historico" src="./6_historico.PNG"/>
+</h1>
 
 
-
-<div align="center" id="top">
   <img alt="perfil" title="perfil" src="./7_perfil.PNG"/>
 </h1>
 
- 
+
   &#xa0;
  
 
  </div>
  
+ 
+ <h1 align="center">Conversor de bases numéricas</h1>
 
- <h1 align="center">FreelaWay</h1>
- 
- 
+
 <p align="center">
   <a href="#dart-sobre">Sobre</a> &#xa0; | &#xa0; 
   <a href="#sparkles-funcionalidades">Funcionalidades</a> &#xa0; | &#xa0; 
@@ -66,14 +61,14 @@
 ## :dart: Sobre ##
 
 ```sh
-• Conversor de moedas feita em grafical user interface (tkinter). Á lógica utiliza de uma API de cotações para fazer as conversoes em tempo real
+• Conversor de bases numéricas muito útil para pesquisas rápidas, além do usuário poder usar em sua área de trabalho 
 ```
 
 ## :sparkles: Funcionalidades ##
 
 
-:heavy_check_mark: Colocar a moeda 'de', moeda 'para', o valor, e converter;\
-:heavy_check_mark: Muito utilizavel para saber o valor de um produto por exemplo de dolar para real ou vice-versa;\
+:heavy_check_mark: Converter bases numéricas em outras bases numéricas;\
+:heavy_check_mark: Usar para fazer trabalhos;\
 :heavy_check_mark: Utilizar como aplicativo Executável em sua área de trabalho.
 
 ## :rocket: Tecnologias ##
@@ -113,21 +108,20 @@ Além disto é bom ter um editor para trabalhar com o código, tal como: [VS Cod
 ```bash
 # Clone este repositorio
  -> git bash here
-  $ https://github.com/LucasFeliciano02/Cadastro_Basico-GUI.git
+  $ https://github.com/LucasFeliciano02/Calculadora_IMC-GUI.git
 
 # Acesse a pasta do projeto que aparecerá em sua área de trabalho
  -> mouse esquerdo -> Abrir com Code
 
 # Colocar os seguintes comandos no terminal para ativar o Interpretador do python a fim de rodar o arquivo
  1º  ->  py -m venv venv
- 2º  ->  venv\Scripts\activate.bat  
- 3º  ->  .\venv\Scripts\activate.bat  
+ 2º  ->  venv\Scripts\activate.ps1  
+ 3º  ->  .\venv\Scripts\activate.ps1  
 
 # Baixar Run Code em extensões, tkinter no terminal e DESFRUTAR DO CÓDIGO
  -> terminal -> pip install tkinter
- -> terminal -> pip install pillow
- 
-### Utilizando o executável:
+
+# Utilizando o executável:
  -> mouse esquerdo no arquivo.exe ->  Criar atalho  ->  Abrir o app na área de trabalho  &  Enjoy
 ```
 
@@ -154,3 +148,4 @@ Accomplished with :heart: by [LucasFeliciano02](https://github.com/LucasFelician
 
 
 <a href="#top">Voltar para o topo</a>
+
