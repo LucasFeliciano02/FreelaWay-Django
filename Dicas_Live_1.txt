@@ -1,0 +1,181 @@
+• Terminal:
+
+    pip install django
+    pip install pullow
+
+
+• Passo a passo de como fazer um projeto em django
+
+
+1º: Iniciar o projeto  =  django-admin startproject nomedoprojeto .
+
+-> Ex:  django-admin startproject freelogin .
+
+
+• Dentro do arquivo Projeto
+
+2º: Settings.py  =  Arquivo de configuração do projeto
+
+ SECRET_KEY  =  Utilizado para fazer hash, criptografia
+-> Ex2: DEBUG = True  =  modo deselvolvimento, False é que o projeto foi colocado em produção
+-> Ex3: ALLOWED_HOSTS = []  = Dominios que podem acessar a minha máquina, só será habilitado se o debug for falso
+-> Ex4: DATABASES  =  Escolha do banco de dados
+-> Ex5: LANGUAGE_CODE = 'pt-BR' ou 'en-us'
+-> Ex6: TIME_ZONE  =  'America/Sao_Paulo'
+
+3º: urls.py  =  rotas, urls que chamam uma função diferente que executa um processo
+
+4º: wsgi.py  =  Usado para fazer deploy da aplicação
+
+-> Ex1: Aplicação normal é sincrona e é referenciada no deploy o wsgi
+
+5º: asgi.py  =  assincrona
+   
+6º: Manage.py  =  CLI (Command Line Interface) = É como se fosse um programa em que as ações sao executadas por códigos
+
+-> Ex: Usado para rodar algo do Django por linhas de codigo
+
+    -> Ex2: python manage.py runserver  =  RODA O SERVER LOCAL
+
+
+7º • Configuração dos arquivos estáticos (STATIC_URL) em (settings.py)
+
+    import os
+
+    STATIC_URL = '/static/'
+    STATICFILES_DIRS = (os.path.join(BASE_DIR, 'templates/static'),)
+    STATIC_ROOT = os.path.join('static')
+
+    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+    MEDIA_URL = '/media/'
+
+
+-> STATIC  =  Ex: Imagens, logo, css, javascript, arquivos nao dinâmicos, estáticos
+-> MEDIA  =  Ex: Arquivos que o usuario envia, toda vez que o usuario fazer um upload, será armazenado na pasta:  '/media/'
+
+
+8º • Quebrar um problemão em probleminhas, criando Apps:
+
+-> Ex: App para autenticação de usuarios, como; login, cadastro, recuperação de senha
+-> Ex2: App para linstagem dos jobs
+-> Ex3: App para perfil do usuario
+
+    • Inicializando o app:  python manage.py startapp nomedoapp
+    
+        -> Ex: python manage.py startapp autenticacao
+
+
+9º • informar para o django que o app foi iniciado em:  (settings.py)
+           
+    -> INSTALLED_APPS = [
+        'autenticacao'
+    ]
+
+10º • Criar uma rota no meu dominio para quando o usuario acessar ela, ele redirecione para esse novo app em (urls.py)
+
+
+    from django.contrib import admin
+    from django.urls import path, include
+
+    urlpatterns = [
+        path('admin/', admin.site.urls),
+        path('auth/', include('autenticacao.urls'))
+]
+
+    -> path('auth/',  =  Criou uma nova url chamada 'auth' para redirecionar para o app criado
+    -> include('autenticacao.urls')  =  Quando o usuario acessar por ex o (dominio.com.br/auth), eu vou o redirecionar para o app criado (autenticacao)
+
+
+11º • Criar o arquivo (urls.py) dentro do app: (autenticacao), pois ele ainda não existe, apesar de ser citado em (urls.py) do (projeto) e pode copiar tudo que ta na urls.py do projeto (freelogin) para o urls do app
+
+# Quebrar em outros probleminhas, pois precisa ter cadastro, recuperação
+
+    ex: meudomio.com.br/auth/cadastro/login/recuperar senha
+
+
+    Ex: 
+
+    from django.urls import path
+    from . import views
+
+    urlpatterns = [
+        path('cadastro/', views.cadastro)   =   /auth/cadastro
+    ]
+
+
+12º • arquitetura de software do django:  MVT  =  Model, view, template
+    -> model  =  arquivo onde vai ficar tudo o que for relacionado a conexao, pesquisa, inserção a banco de dados
+    -> view  =  Lógica da aplicação, (Recebe uma request e retorna uma response), ou seja, por ex: verificar o nome do usuario, validar o email, senha forte, suficiente 
+    -> template  =  Interface (html, botoes, campos de pesquisa)
+
+        -> Quando um usuario acessa uma url, eu quero que ele redirecione para uma view
+
+
+13º • urls
+
+from django.urls import path
+from . import views
+
+
+urlpatterns = [
+    path('cadastro/', views.cadastro, name="cadastro"),
+    path('logar/', views.logar, name='logar')
+]
+
+
+# http://127.0.0.1:8000/auth/cadastro/
+
+# http://127.0.0.1:8000/auth/logar/
+
+# meudominio.com.br/auth/cadastro
+
+# cadastro é a função que esta em views
+
+
+14º • views do app
+
+
+from django.shortcuts import render
+from django.http import HttpResponse
+
+
+def cadastro(request):
+    return HttpResponse('Cadastro')
+
+
+def logar(request):
+    return HttpResponse('Login')
+
+
+# http://127.0.0.1:8000/auth/cadastro/
+
+# http://127.0.0.1:8000/auth/logar/
+
+# cadastro é a request de urlspatterns de urls.py doa pp
+# HttpResponse('Cadastro')  =  Ao acessar o navegador:   http://127.0.0.1:8000/auth/cadastro/, aparecera a msg ('Cadastro') que esta dentro do HttpResponse
+
+
+15º • Base.html  =  Pra nao repetir o mesmo codigo diversas vezes
+
+-> Ex: Settings:
+
+    TEMPLATES
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+
+Criar new folder fora de todas as pastas com o nome 'templates' e um arquivo 'base.html' dentro
+
+-> A pasta (templates) do app com o (cadastro.html) recebe a pasta (templates) com a (base.html) por meio de (extends)
+• css se cria com new folder de nome: (static) em 'templates' que esta na raiz do projeto com o base.html
+
+-> é bom criar dentro dessa static e uma pasta para cada app em que dentro terá os arquivos: (css, js, img)
+    ex: Criar pasta do app autenticacao dentro de static  ->  criar pastas (css, js e img) dentro de autenticacao
+    ex2: Agora, criar o arquivo cadastro.css dentro da pasta css 
+      -> agora precisa ir la no html e fazer essa importação do arquivo css
+
+
+• python manage.py migrate  =  envia os dados para o banco de dados, django cria automaticamente, so ver no db browser
+
+• python manage.py createsuperuser  =  Cria o admin conforme os dados enviados: http://127.0.0.1:8000/admin
+
+
+• O proprio django tem mensagens de erro que deve ser colocador em settings.py
