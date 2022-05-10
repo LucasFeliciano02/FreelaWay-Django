@@ -1,11 +1,11 @@
 <!-- Status -->
 
-<!-- <h4 align="center"> 
----
+ <h4 align="center"> 
+
 	🚧  Projeto Freelaway 🚀 Em construção...  🚧
 </h4> 
 
-<hr> -->
+<hr> 
 
 
 <div align="center" id="top">
