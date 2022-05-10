@@ -21,29 +21,26 @@
   <img alt="recuperar senha" title="recuperar senha" src="./3_recuperar_senha.gif"/>
 </h1>
 
- 
- 
 
 <div align="center" id="top">
   <img alt="jobs" title="jobs" src="./4_jobs.PNG"/>
 </h1>
 
- 
- 
 
 <div align="center" id="top">
   <img alt="aceitar jobs" title="aceitar jobs" src="./5_aceitar_jobs.PNG"/>
 </h1>
 
- 
- 
 
 <div align="center" id="top">
-  <img alt="1_cadastro" title="1_cadastro" src="./1_cadastro.PNG"/>
+  <img alt="historico" title="historico" src="./6_historico.PNG"/>
 </h1>
 
- 
- 
+
+<div align="center" id="top">
+  <img alt="perfil" title="perfil" src="./7_perfil.PNG"/>
+</h1>
+
  
   &#xa0;
  
