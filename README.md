@@ -68,9 +68,11 @@
 ## :sparkles: Funcionalidades ##
 
 
-:heavy_check_mark: Converter bases numéricas em outras bases numéricas;\
-:heavy_check_mark: Usar para fazer trabalhos;\
-:heavy_check_mark: Utilizar como aplicativo Executável em sua área de trabalho.
+:heavy_check_mark: Autenticação e Cadastro de Usuário;\
+:heavy_check_mark: Listagem, Detalhes e Aceite de Jobs;\
+:heavy_check_mark: Recuperação de senha;\
+:heavy_check_mark: Atualização de Perfil, Listagem de Jobs Aceitos e Envio de Arquivos.
+
 
 ## :rocket: Tecnologias ##
  
