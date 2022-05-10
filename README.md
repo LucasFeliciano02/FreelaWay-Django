@@ -42,7 +42,7 @@
  </div>
  
  
- <h1 align="center">Conversor de bases numéricas</h1>
+ <h1 align="center">Freelaway Project</h1>
 
 
 <p align="center">
