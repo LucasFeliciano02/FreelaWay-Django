@@ -127,11 +127,23 @@ Além disto é bom ter um editor para trabalhar com o código, tal como: [VS Cod
  2º  ->  venv\Scripts\activate.ps1  
  3º  ->  .\venv\Scripts\activate.ps1  
 
-# Baixar Run Code em extensões, tkinter no terminal e DESFRUTAR DO CÓDIGO
- -> terminal -> pip install tkinter
+# Instalar bibliotecas
+ -> (env) pip install django
+    (env) pip install pillow
+    (env) pip freeze > requirements.txt
+    (env) pip install -r requirements.txt
 
-# Utilizando o executável:
- -> mouse esquerdo no arquivo.exe ->  Criar atalho  ->  Abrir o app na área de trabalho  &  Enjoy
+# Criar projeto
+ ->  (env) django-admin startproject freelaway .
+
+# Criar apps
+ ->  (env) python manage.py startapp autenticacao
+     (env) python manage.py startapp jobs
+
+# Migrations
+ ->  (env) python manage.py makemigrations
+     (env) python manage.py migrate
+
 ```
 
 
