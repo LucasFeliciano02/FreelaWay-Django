@@ -61,7 +61,8 @@
 ## :dart: Sobre ##
 
 ```sh
-• Conversor de bases numéricas muito útil para pesquisas rápidas, além do usuário poder usar em sua área de trabalho 
+• Projeto feito em Django cujo o objetivo é uma aplicação para contratação de freelances.
+• Foi desenvolvida para conectar empresas e freelances.
 ```
 
 ## :sparkles: Funcionalidades ##
