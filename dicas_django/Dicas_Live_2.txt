@@ -1,0 +1,90 @@
+
+• RECUPERAÇÃO DE SENHA
+
+Ex: O usuario vai em recuperar senha, ele digita seu email, nos enviamos um email pra ele com um link que nesse link contém um token de indentificação do usuario,
+    Clicando nesse link vai ter um formulario pra ele digitar uma nova senha, clicou em confirmar, a senha será alterada
+
+
+-> Configuração de envio de e-mails, colocar em (settings.py do projeto):
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+
+-> Criar URL´s para ter o fluxo de autentificação:  4 serão necessarias
+
+from django.contrib.auth import views as auth_views
+
+
+path('password_reset/', auth_views.PasswordResetView.as_view(template_name="password_reset.html"), name="password_reset"),
+path('password_reset_done/', auth_views.PasswordResetDoneView.as_view(template_name="password_reset_done.html"), name="password_reset_done"),
+path('reset/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(template_name="password_reset_confirm_view.html"), name="password_reset_confirm"),
+path('password_reset_complete/', auth_views.PasswordResetCompleteView.as_view(template_name="password_reset_complete.html"), name="password_reset_complete"),
+
+-> Criar os templates.html para os paths com o mesmo nome
+
+# Ir no admin, no nome do super usuario e criar um email, pois se não não há o envio de email no recuperar senha, apenas para teste, pois depois vai ter um template de recuperação de senha para colocar as credenciais e fazer isso
+
+
+• CRIANDO TABELA NO BANCO DE DADOS
+
+    • models = Classes da linguagem python que vai referenciar para gente uma tabela no banco de dados
+
+        ex: class Teste(models.Model):
+                nome = models.CharField(max_length=50)
+                idade = models.IntegerField()
+
+
+        • Agora, criar um arquivo com as instruções para o banco de dados dentro de migrations automaticamente com os seguintes comandos:
+
+            Configurou as classes do bd em models.py do app, FUNCIONANDO:
+                EX:   python manage.py makemigrations  =  Será criado um initial em migrations do app
+
+                Ex2:  python manage.py migrate  =  Executa o initial que será enviado la pro banco de dados os valores do bd das funções criadas em models
+
+                    Agora se vc ir no bd browser sqlite vai ver que tem uma tabela a mais com o nome da classe feita em models
+
+            Automaticamente a ultima model criada é deletada para inserção dessas models atualizadas
+
+
+
+            • OU, se Modicou algo em models, para o bd:
+
+                    -> python manage.py makemigrations  =  Faz as migrações
+
+                    -> python manage.py migrate  =  Envia essas migrações para o banco de dados
+
+
+• render = Usada em views para funções e recebem até 3 parâmetros:
+
+• admin.py = arquivo para manipularmos a area administrativa do django
+
+# A função em views tem que ter o mesmo nome do path da urls.py
+
+• Sempre que for criar um formulario que vai aceitar arquivos, como videos, fotos, json, precisa colocar dentro do form action do html o: enctype
+
+    # exemplo do (perfil.html):
+
+                -> Ex:    enctype="multipart/form-data">  =  Possibilita que o formulario possa receber e enviar os arquivos
+
+                -> Ex2:   <form action="{% url 'enviar_projeto' %}" method="POST" enctype="multipart/form-data">
+
+• input do tipo 'hidden' com valor de 'id' nao aparece para o usuario, mas é utilizado quando o usuario envia um determinado arquivo e para saber de qual job é o arquivo, pois o back-end utiliza o id
+        
+        -> Ex:  <input type='hidden' value='{{job.id}}' name='id'>
+
+
+• arquivo = request.FILES.get('file')  = quando queremos receber um arquivo
+• id_job = request.POST.get('file')  =  quando queremos pegar um dado que foi enviado através do método POST
+
+
+• Caso nao colocar a verificação {% csrf_token %} no final do <form action> do html, a pagina vai ficar como PROIBIDO
+
+
+• Caso um usuario que nao esteja logado, tente acessar, ele é redirecionado para /auth/logar, ao inves de aparecer aquela tela amarela com erros
+
+from django.contrib.auth.decorators import login_required  # ==  Limita que apenas usuários logados possa acessar
+
+        -> Ex: @login_required(login_url='/auth/logar')
+
+
+• TAREFA: Colocar do lado do encontrar job's, perfil e sair e colocar aonde vao redirecionar
