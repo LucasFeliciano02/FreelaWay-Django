@@ -1,0 +1,103 @@
+django-admin statproject (nomedoprojeto) .   =  INICIA O PROJETO
+
+Dentro do (nomedoprojeto)
+
+- asgi.py e wsgi.py  =  para servidores de produção, nao se foca muito nisso
+
+- settings.py  =  arquivo de configuração do seu django
+ 
+- urls.py  = arquivo de ponto de de entrada do seu django (É o primeiro arquivos de urls que ele vai carregar no seu site e dps vc vai navegando por outros arquivo)
+
+
+AGORA PRECISA DO APP
+
+
+python manage.py startapp (nome do app)=  INICIA O APP
+
+- init.py = pacote python
+
+- admin  =  arquivo admin pra jogar esse app pra dentro do admin do django, pode ser usado ou nao
+
+- apps.py  =  importante para colocar no settings.py
+
+- models.py = models do rm do django
+
+- tests.py  =  p/ fazer testes
+
+- views.py  =
+
+
+
+
+
+
+         				PASSO  A  PASSO
+nome do app = hello
+
+-> (nomedoprojeto)  ->  settings.py  -> installed_apps  =  [
+					     'hello.'
+					]
+
+
+-> urls.py  do projeto =  registrar o caminho dos apps
+	
+	path('ADMIN/', admin.site.urls)  =  dominio.com/ADMIN/
+ 	path('')  =  Deixa sem nada pra que na web fique o nome padrao e nao o nome/alguma coisa, entao fica no dominio raiz	
+	path('', include('hello.urls'))   =  .urls  = modulo ainda nao existente na pasta do app helo que precisa ser criada
+	path('')  =  referenciando meu dominio
+
+  AO IMPORTAR O URLS DO PROJETO O DOMINIO VAI FAICAR
+
+# dominio.com/ADMIN/AS COISAS QUE FOREM ADICIONADAS
+-> urls.py do app
+
+urlpatterns = [
+	path('')
+]
+
+
+
+from . import viwes  path(' ', O SEGUNDO PARAMETRO É A FUNÇÃO CRIADA EM VIEWS QUE VAI SER EXECUTADO QUANTO ESSA URL FOR EXECUTADA)
+
+
+urlpatterns = [
+	path(' ',  views.hello)   =  FUNCAO DEVE ESTAR DENTRO DO MODULO VIEWS DO APP
+]
+
+
+
+
+FUNÇÃO DENTRO DE VIEWS.PY DO APP
+
+VAI RODAR O QUE ESTA DENTRO DO INDEX.HTML
+
+def hello(request):  
+      return render(request, 'hello/index.html')  IMPORTA DO HTML DA PASTA TEMPLATES QUE FOI CRIADA DENTRO DO APP
+	,{ Variaveis que quer injetar no template  | 'name' : 'Lels'
+})
+		
+
+templates/hello
+                                                            ^
+index.html  == ENVIAR PARA DEF DO VIEWS.PY
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
