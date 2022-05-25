@@ -1,0 +1,39 @@
+{% extends 'base.html' %}  <!--Referenciar o base.html do template de fora para nao repetir o mesmo codigo diversas vezes e ter o mesmo estilo-->
+{% load static %}  <!--Sempre carregar os arquivos estáticos quando for utilizar dentro do html-->
+
+{% block 'head' %}
+    <link rel="stylesheet" href="{% static 'autenticacao/css/cadastro.css' %}">  <!--Puxa o arquivo css daquela pasta, o arquivo.html que está no template do app é quem recebe o 'arquivo.css' e nao o contrario-->
+{% endblock %}
+
+{% block 'body' %}
+    <div class="box">
+        <form action="{% url 'cadastro' %}" method="POST">{% csrf_token %}
+            
+            <!--Mensagem de erro que está em views e settings-->
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert {{message.tags}}">
+                        {{message}}
+                    </div>
+                {% endfor %}
+            {% endif %}   
+
+            <h1 class="titulo font-degrade borda-bottom-degrade">INSCREVA-SE</h1>
+            <br>
+            <span class="span-descricao">Nome de usuário:</span>
+            <input type="text" class="form-control input-cadastro" name="username">
+            <br>
+            <span class="span-descricao">Senha:</span>
+            <input type="password" class="form-control input-cadastro" name="password">
+            <br>
+            <span class="span-descricao">Confirmar senha:</span>
+
+            <input type="password" class="form-control input-cadastro" name="confirm-password">
+            
+            <br>
+            <input type="submit" value="CADASTRAR" class="btn btn-success btn-lg">
+            <a href="{% url 'logar' %}" class="btn btn-primary btn-lg">LOGIN</a>  <!--href é pra onde ele vai redirecionar, tem que ser o mesmo 'name' que está em 'urls.py', pois tem o botao 'login'-->
+        </form>
+
+    </div>
+{% endblock %}
