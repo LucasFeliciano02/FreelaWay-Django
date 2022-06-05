@@ -1,8 +1,7 @@
 <!-- Status -->
 
 
-	🚧  Projeto Freelaway 🚀 Em construção...  🚧
-</h4> 
+	🚧
 
 <hr> 
 
