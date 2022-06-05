@@ -1,3 +1,9 @@
+<!-- <h4 align="center"> 
+---
+	🚧  Projeto FreelaWay-Django 🚀 Em construção...  🚧
+</h4> 
+
+<hr> -->
 
 
 <div align="center" id="top">
