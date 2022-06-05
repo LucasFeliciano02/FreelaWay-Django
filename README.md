@@ -1,11 +1,6 @@
 <!-- Status -->
 
 
-	🚧
-
-<hr> 
-
-
 <div align="center" id="top">
   <img alt="cadastro" title="cadastro" src="./1_cadastro.PNG"/>
 </h1>
