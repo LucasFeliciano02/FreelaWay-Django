@@ -1,6 +1,5 @@
 <!-- Status -->
 
- <h4 align="center"> 
 
 	🚧  Projeto Freelaway 🚀 Em construção...  🚧
 </h4> 
