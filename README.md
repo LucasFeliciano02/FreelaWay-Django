@@ -1,4 +1,3 @@
-<!-- Status -->
 
 
 <div align="center" id="top">
