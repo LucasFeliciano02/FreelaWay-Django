@@ -5,6 +5,8 @@
 
 <hr> -->
 
+<h1 align="center">FreelaWay - PyStack Week 3.0</h1>
+
 
 <div align="center" id="top">
   <img alt="cadastro" title="cadastro" src="./1_cadastro.PNG"/>
@@ -40,8 +42,9 @@
  </div>
  
  
+ <!--
  <h1 align="center">FreelaWay - PyStack Week 3.0</h1>
-
+-->
 
 <p align="center">
   <a href="#dart-sobre">Sobre</a> &#xa0; | &#xa0; 
