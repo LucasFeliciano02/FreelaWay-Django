@@ -85,19 +85,24 @@ As seguintes ferramentas 🛠 foram utilizadas na construção do projeto:
 <table>
   <thead>
     <th>Back-end</th>
+    <th>Front-end</th>
   </thead>
   <tbody>
     <tr>
       <td>Python</td>
+      <td>Bootstrap</td>
     </tr>
     <tr>
-      <td>Django 4</td>
+      <td>Django</td>
+      <td>Html</td>
     </tr> 
     <tr>
       <td>SQLite</td>
+      <td>Css</td>
     </tr>
     <tr>
       <td>Arquitetura MVT</td>
+      <td>Js</td>
     </tr>  
 	  
   </tbody>
